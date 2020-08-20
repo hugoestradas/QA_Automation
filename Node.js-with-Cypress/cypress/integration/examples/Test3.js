@@ -18,5 +18,16 @@ describe('My Second Test Suite', function() {
             }
         })
 
+        //autocomplete
+        cy.get('#autocomplete').should('have.value', 'India')
+        //visible and invisible
+        cy.get('#displayed-text').should('be.visible')
+        cy.get('#hide-textbox').click()
+        cy.get('#displayed-text').should('not.be.visible')
+        cy.get('#show-textbox').should('be.visible')
+
+        //radio buttons
+        cy.get('[value="radio2"]').check().should('be.checked')
+
     })
 })
