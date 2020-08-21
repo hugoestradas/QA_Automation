@@ -13,7 +13,7 @@ describe('Test', function() {
         cy.get('#inlineRadio3').should('be.disabled')
         cy.get(':nth-child(2) > .nav-link').click()
         cy.get('h4.card-title').each(($el, index, $list) => {
-            if (el.text().includes('Blackberry')){
+            if ($el.text().includes('Blackberry')){
                 cy.get('button.btn.btn-info').eq(index).click()
             }
         })
